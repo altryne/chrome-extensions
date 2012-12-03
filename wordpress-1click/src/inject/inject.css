@@ -1,0 +1,16 @@
+#plugin-description p.button{
+	clear: both;
+}
+
+#plugin-description .special-plugin-button{
+	margin-bottom:15px !important;
+	background: #6779DB !important;
+}
+
+.overlay{
+   	background-color: #000;
+   	opacity: .7;
+   	position: fixed; top: 0; left: 0;right:0;bottom:0;
+   	width: 100%; height: 100%;
+   	z-index: 99999999999;
+}
