@@ -19,6 +19,7 @@
     "default_title": "page action demo",
     "default_popup": "src/page_action/page_action.html"
   },
+  "options_page" : "src/page_action/page_action.html",
   "content_scripts": [
     {
       "matches": [
@@ -31,5 +32,8 @@
         "src/inject/inject.js"
       ]
     }
-    ]
+    ],
+	"permissions": [
+	    "storage"
+  	]
 }

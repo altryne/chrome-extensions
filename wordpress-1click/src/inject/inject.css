@@ -8,9 +8,32 @@
 }
 
 .overlay{
-   	background-color: #000;
-   	opacity: .7;
+   	background-color: rgba(0,0,0,0.7);
    	position: fixed; top: 0; left: 0;right:0;bottom:0;
    	width: 100%; height: 100%;
    	z-index: 99999999999;
+	pointer-events : none;
+	opacity: 0;
+	-webkit-transition : all 250ms ease;
+}
+.overlay.show{
+	opacity: 1;
+	pointer-events: auto;
+}
+
+#my_awesome_button_container{
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	left:50%;
+	margin: -250px 0 0 -250px;
+	background: #fefefe;
+	border-radius: 3px;
+	top:150%;
+	-webkit-transition : all 250ms ease;
+	box-sizing: border-box;
+	padding:15px;
+}
+.show #my_awesome_button_container{
+	top:50%;
 }

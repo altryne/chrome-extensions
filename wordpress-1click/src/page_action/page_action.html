@@ -1,17 +1,68 @@
-<!doctype html>
-<style type="text/css">
-	#mainPopup {
-		padding: 10px;
-		height: 200px;
-		width: 400px;
-		font-family: Helvetica, Ubuntu, Arial, sans-serif;
-	}
-	h1 {
-		font-size: 2em;
-	}
-</style>
-
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>wp-1click settings page</title>
+	<script type="text/javascript" src="../../js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../js/settings.js"></script>
+	<style type="text/css">
+		#mainPopup {
+			padding: 10px;
+			height: 200px;
+			width: 520px;
+			font-family: Helvetica, Ubuntu, Arial, sans-serif;
+		}
+		h1 {
+			font-size: 2em;
+		}
+		.template{
+			display: none;
+		}
+		.del{
+			display: inline-block;
+			color: #fa5853;
+			text-decoration: underline;
+			cursor: pointer
+		}
+		fieldset{
+			border: none;
+			padding: 0;
+			margin: 0
+		}
+		input{
+			font-size: 18px;
+			padding:2px 5px;
+		}
+		#submit{
+			border: none;
+			background: #687dd9;
+			color: #fff;
+			cursor: pointer;
+			padding:10px;
+			font-size: 15px;
+		}
+		#submit:hover,#submit:focus{
+			background: #5f6adb;
+		}
+		#submit:active{
+			background: #3e4edb;
+		}
+	</style>
+</head>
+<body>
 <div id="mainPopup">
-<h1>Hello extensionizr!</h1>
-<p>To shut this popup down, edit the manifest file and remove the "default popup" key. To edit it, just edit ext/page_action/page_action.html. The CSS is there, too.</p>
+	<h1>Enter your website URL below and click "add"</h1>
+
+	<p>Add a name for your blog and a wp-admin url, something like http://alexw.me/wp-admin</p>
+	<form action="#" id="blogs">
+		<button id="submit">Add another blog</button>
+		<fieldset class="template">
+			<input type="text" name="" class="name" placeholder="Blog name">
+			<input type="text" name="" class="url" placeholder="Blog Url">
+			<div class="del">remove</div>
+
+		</fieldset>
+	</form>
 </div>
+</body>
+</html>
