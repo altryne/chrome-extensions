@@ -6,17 +6,29 @@
 	<script type="text/javascript" src="../../js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="../../js/settings.js"></script>
 	<style type="text/css">
-		#mainPopup {
+		body {
 			padding: 10px;
-			height: 200px;
-			width: 520px;
+			height: auto;
+			width: 460px;
 			font-family: Helvetica, Ubuntu, Arial, sans-serif;
+		}
+		#settings{
+			display: none;
+		}
+		#settings:target{
+			display: block;
+		}
+		#buttons{
+			display: none;
+		}
+		#buttons:target{
+			display: block
 		}
 		h1 {
 			font-size: 2em;
 		}
-		.template{
-			display: none;
+		.template,.template2{
+			display: none !important;
 		}
 		.del{
 			display: inline-block;
@@ -33,36 +45,70 @@
 			font-size: 18px;
 			padding:2px 5px;
 		}
-		#submit{
+		.name{
+			max-width: 100px;
+		}
+		.url{
+			width: 250px;
+		}
+		.button{
 			border: none;
 			background: #687dd9;
 			color: #fff;
 			cursor: pointer;
 			padding:10px;
 			font-size: 15px;
+			border-radius:2px;
+			display: inline-block;
+			text-decoration: none
 		}
-		#submit:hover,#submit:focus{
+		.button:hover,.button:focus{
 			background: #5f6adb;
 		}
-		#submit:active{
+		.button:active{
 			background: #3e4edb;
+		}
+		.setts{
+			float:left;
+			clear:both;
+		}
+		.install::after{
+			content : attr(data-name);
+			font-weight: bold;
+		}
+		#blog_buttons .button{
+			display: block !important;
+			max-width: 450px;
+			margin:5px 0;
+			text-align: center;
+			font-size: 1.8em;
 		}
 	</style>
 </head>
 <body>
-<div id="mainPopup">
-	<h1>Enter your website URL below and click "add"</h1>
-
-	<p>Add a name for your blog and a wp-admin url, something like http://alexw.me/wp-admin</p>
+<div id="settings">
+	<h1>Enter your website URL below</h1>
+	<p>Add a name for your blog and a wp-admin url, something like http://myblog.me/wp-admin</p>
 	<form action="#" id="blogs">
-		<button id="submit">Add another blog</button>
+		<button id="submit" class="button">Add another blog</button>
+		<a href="#buttons" class="button back">Done</a>
 		<fieldset class="template">
-			<input type="text" name="" class="name" placeholder="Blog name">
-			<input type="text" name="" class="url" placeholder="Blog Url">
+			<input type="text" class="name" placeholder="Blog name">
+			<input type="text" class="url" placeholder="Blog Url">
 			<div class="del">remove</div>
-
 		</fieldset>
 	</form>
+</div>
+
+<div id="buttons">
+	<h1>Choose on which blog you want to install the plugin <span class="plugin_name"></span></h1>
+
+	<div id="blog_buttons">
+		<a id="blog_name_alex" href="http://alexw.me" data-blog_name="alex">Install "hotfix" plugin on alex</a>
+		<h3>Whoops, it seems that you don't have any blogs set-up</h3>
+	</div>
+	<a href="#" class="button install template2">Install <span class="plugin_name"></span> on </a>
+	<a href="#settings" class="button setts">Edit blogs</a>
 </div>
 </body>
 </html>
